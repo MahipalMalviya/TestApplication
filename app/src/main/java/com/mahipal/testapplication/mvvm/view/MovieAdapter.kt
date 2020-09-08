@@ -44,6 +44,9 @@ class MovieAdapter(private val context: Context, photoList: ArrayList<BaseRespon
             Glide.with(context)
                 .load(list?.get(position)?.poster)
                 .into(itemView.iv_item_movie)
+
+            itemView.tv_movie_name.text = list?.get(position)?.title
+            itemView.tv_movie_year.text = list?.get(position)?.year
         }
     }
 
