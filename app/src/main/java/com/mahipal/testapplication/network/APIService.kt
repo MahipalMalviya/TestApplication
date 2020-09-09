@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface APIService {
 
     @GET("?i=tt3896198&apikey=5625bfd8")
-    fun getMovieBySearch(@Query("t") title:String?): Call<BaseResponse>
+    fun getMovieBySearch(@Query("s") title:String?): Call<BaseResponse>
 }
