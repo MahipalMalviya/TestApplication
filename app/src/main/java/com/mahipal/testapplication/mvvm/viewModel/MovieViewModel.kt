@@ -11,11 +11,11 @@ import retrofit2.Response
 
 class MovieViewModel : ViewModel() {
 
-    fun searchImages(context:Context): MutableLiveData<BaseResponse> {
+    fun searchMovies(context:Context,title:String?): MutableLiveData<BaseResponse> {
         val mutableMovieList = MutableLiveData<BaseResponse>()
 
         val apiService = RetrofitInstance.getInstance(context)
-        val apiCall = apiService?.getMovieList()
+        val apiCall = apiService?.getMovieBySearch(title)
 
         apiCall?.enqueue(object : Callback<BaseResponse> {
             override fun onFailure(call: Call<BaseResponse>, t: Throwable) {
